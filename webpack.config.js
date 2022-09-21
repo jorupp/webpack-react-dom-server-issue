@@ -1,6 +1,6 @@
 const path = require('path');
-const env = require('@babel/preset-env');
-const reactApp = require('babel-preset-react-app');
+// const env = require('@babel/preset-env');
+// const reactApp = require('babel-preset-react-app');
 const webpack = require('webpack');
 // Webpack build configuration to build the SSR bundle.
 // Invoked by build:server.
@@ -20,6 +20,12 @@ module.exports = {
   },
   module: {
     rules: [
+      // from https://github.com/webpack/webpack/issues/16089
+              {
+                include: path.resolve(__dirname, "node_modules", "@apollo", "client", 'react', 'ssr'),
+                type: "javascript/auto"
+            }
+
     //   {
     //     test: /\.m?jsx?$/,
     //     exclude: /node_modules/,
