@@ -11,7 +11,7 @@ module.exports = {
   entry: path.resolve(__dirname, './server.js'),
   target: 'node',
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, '../build'),
     filename: 'server.bundle.js',
     libraryTarget: 'this',
   },
